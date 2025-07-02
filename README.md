@@ -19,9 +19,3 @@ Below are the 8 case studies I’ve worked on, each linked for easy access:
 - [Case Study #6 - Clique Bait]()
 - [Case Study #7 - Balanced Tree Clothing Co.]()
 - [Case Study #8 - Fresh Segments]()
-
-```sql
-SELECT *
-FROM student_info
-WHERE student_name = 'Katie';
-```
