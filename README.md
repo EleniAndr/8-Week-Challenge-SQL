@@ -10,7 +10,7 @@ I chose to participate in the [8-Week SQL Challenge](https://8weeksqlchallenge.c
 
 ---
 
-The 8 case studies that I solved can be found in the following links:
+Below are the 8 case studies I’ve worked on, each linked for easy access:
 - [Case Study #1 - Danny's Diner]()
 - [Case Study #2 - Pizza Runner]()
 - [Case Study #3 - Foodie-Fi]()
