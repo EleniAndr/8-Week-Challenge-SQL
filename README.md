@@ -11,7 +11,7 @@ I chose to participate in the [8-Week SQL Challenge](https://8weeksqlchallenge.c
 ---
 
 Below are the 8 case studies I’ve worked on, each linked for easy access:
-- [Case Study #1 - Danny's Diner]()
+- [Case Study #1 - Danny's Diner](https://github.com/EleniAndr/-1-Danny-s-Diner?tab=readme-ov-file#case-study-1---dannys-diner)
 - [Case Study #2 - Pizza Runner]()
 - [Case Study #3 - Foodie-Fi]()
 - [Case Study #4 - Data Bank]()
