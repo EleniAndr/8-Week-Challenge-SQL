@@ -11,8 +11,8 @@ I chose to participate in the [8-Week SQL Challenge](https://8weeksqlchallenge.c
 ---
 
 Below are the 8 case studies I’ve worked on, each linked for easy access:
-- [Case Study #1 - Danny's Diner](https://github.com/EleniAndr/-1-Danny-s-Diner?tab=readme-ov-file#case-study-1---dannys-diner)
-- [Case Study #2 - Pizza Runner](https://github.com/EleniAndr/2-Pizza-Runner/blob/main/README.md#case-study-2---pizza-runner)
+- [Case Study #1 - Danny's Diner](https://github.com/EleniAndr/8-Week-Challenge-SQL/tree/main/Case%20Study%20%231%20-%20Danny's%20Diner#case-study-1---dannys-diner)
+- [Case Study #2 - Pizza Runner](https://github.com/EleniAndr/8-Week-Challenge-SQL/tree/main/Case%20Study%20%232%20-%20Pizza%20Runner#case-study-2---pizza-runner)
 - [Case Study #3 - Foodie-Fi]()
 - [Case Study #4 - Data Bank]()
 - [Case Study #5 - Data Mart]()
