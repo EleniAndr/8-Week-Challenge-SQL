@@ -66,8 +66,8 @@ Before diving into SQL, let’s take a moment to explore the data.
 | 10       | 104         | 1        | 2, 6       | 1, 4   | 2020-01-11 18:34:49 |
 
 #### Course of action:
-  - Create a new `Temporary Table` called `customer_orders_clean` that includes all columns from the original table.
-  - Remove `null` values and `empty strings ''` and replace them with `*no values NULL*`.
+  - Create a `Temporary Table` called `customer_orders_clean` that includes all columns from the original table.
+  - Remove `null` values and `empty strings ''` and replace them with *no values NULL*.
 
 #### 💻 SQL Query
 ```sql
@@ -125,9 +125,9 @@ FROM pizza_runner.customer_orders;
 | 10       | 1         | 2020-01-11 18:50:20 | 10km     | 10minutes  | null                    |
 
 #### Course of action:
-  - Replace all `null values` with `*no values NULL*`.
+  - Replace all `null values` with *no values NULL*.
   - Strip units from individual cell entries and include them in the column headers instead.
-  - Convert the data types to FLOAT & INTEGER in the columns `distance` and `duration` respectively.
+  - Convert the data types to `FLOAT` & `INTEGER` in the columns `distance` and `duration` respectively.
   - Convert the `pickup_time` column to a proper `date/time` data type.
 
 #### 💻 SQL Query
