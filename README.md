@@ -1,4 +1,5 @@
-# 8-Week-Challenge-SQL
+
+# 8 Week Challenge SQL
 
 I chose to participate in the [8-Week SQL Challenge](https://8weeksqlchallenge.com/) as a fun and practical way to grow my SQL skills. The case studies simulate real business scenarios, making the learning process both engaging and meaningful. Throughout the challenge, I gained hands-on experience in data exploration, cleaning, and querying — key tools in any data analyst’s toolkit. This experience helped me:
 
@@ -9,7 +10,7 @@ I chose to participate in the [8-Week SQL Challenge](https://8weeksqlchallenge.c
 📈 Build confidence writing complex queries for real-world scenarios
 
 ---
-
+## 📚 Table of contents
 Below are the 8 case studies I’ve worked on, each linked for easy access:
 - [Case Study #1 - Danny's Diner](https://github.com/EleniAndr/8-Week-Challenge-SQL/tree/main/Case%20Study%20%231%20-%20Danny's%20Diner#case-study-1---dannys-diner)
 - [Case Study #2 - Pizza Runner](https://github.com/EleniAndr/8-Week-Challenge-SQL/tree/main/Case%20Study%20%232%20-%20Pizza%20Runner#case-study-2---pizza-runner)
