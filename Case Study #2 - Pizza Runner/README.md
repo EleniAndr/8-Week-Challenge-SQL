@@ -183,8 +183,8 @@ Case Study Questions
 
 This case study has LOTS of questions - they are broken up by area of focus, including:
 
-- [Pizza Metrics](https://github.com/EleniAndr/A.-Pizza-Metrics/blob/main/README.md#a-pizza-metrics)
-- [Runner and Customer Experience]()
-- [Ingredient Optimisation]()
-- [Pricing and Ratings]()
-- [Bonus DML Challenges (DML = Data Manipulation Language)]()
+- [A. Pizza Metrics](https://github.com/EleniAndr/A.-Pizza-Metrics/blob/main/README.md#a-pizza-metrics)
+- [B. Runner and Customer Experience]()
+- [C. Ingredient Optimisation]()
+- [D. Pricing and Ratings]()
+- [E. Bonus DML Challenges (DML = Data Manipulation Language)]()
