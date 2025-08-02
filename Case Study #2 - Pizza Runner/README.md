@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/85a77a6d-a064-4e84-a1e3-79096d0760c2"></td>
+    <td><img src="https://github.com/user-attachments/assets/565c436d-c652-4cb3-b3b8-daac1eb65323"></td>
     <td>
       <p><strong>Case - Problem Statement</strong></p>
       <p>Danny was inspired by an Instagram post — “80s Retro Styling and Pizza Is The Future!”. He loved the idea but knew pizza alone wouldn’t secure funding. So, he combined it with an Uber-style delivery model and launched *Pizza Runner*. He recruited runners to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house), built a mobile app, and, as a data scientist, began collecting data for his business. He requires assistance to clean his data and apply some basic calculations so he can better direct his runners and optimise Pizza Runner’s operations.</p>
@@ -19,9 +19,9 @@
     <th>Table 2: customer_orders (preview)</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/ac235443-b4e0-4c36-85f3-14725741312a" width="500"/></td>
-    <td><img src="https://github.com/user-attachments/assets/d1e2a0cf-a34a-4cac-a21a-3d394375fb6d" width="180"/></td>
-    <td><img src="https://github.com/user-attachments/assets/1b0e3690-21c9-493c-a645-69b1eb44f6c3" width="400"/></td>
+    <td><img src="https://github.com/user-attachments/assets/0aa1efec-a806-42e0-b864-bfd548ae679e" width="500"/></td>
+    <td><img src="https://github.com/user-attachments/assets/6ace82dd-00aa-4058-a18c-a6afac0487b4" width="180"/></td>
+    <td><img src="https://github.com/user-attachments/assets/e22b134b-0c7f-4a74-9a17-fbee88db8f5b" width="400"/></td>
   </tr>
 </table>
 
@@ -33,10 +33,10 @@
     <th>Table 6: pizza_toppings</th>
   </tr>
   <tr>
-     <td><img src="https://github.com/user-attachments/assets/f9e0e98a-6d7d-416f-80aa-2361e63726fe" width="420"/></td>
-    <td><img src="https://github.com/user-attachments/assets/7b669665-6d75-4f42-a8ef-0bd0e535c4e7" width="180"/></td>
-    <td><img src="https://github.com/user-attachments/assets/e6103fc4-3247-4bfa-a274-34c8a9520b6e" width="180"/></td>
-    <td><img src="https://github.com/user-attachments/assets/090817a5-9c45-4ec5-8dba-06299d38cce3" width="180"/></td>
+    <td><img src="https://github.com/user-attachments/assets/e0bcded2-9d56-4fe3-b66c-51e9c6ac404f" width="420"/></td>
+    <td><img src="https://github.com/user-attachments/assets/2bfbed19-015e-4238-9aa9-b38ed3e42828" width="180"/></td>
+    <td><img src="https://github.com/user-attachments/assets/a507d429-384e-4e96-b7a8-095ece41839c" width="180"/></td>
+    <td><img src="https://github.com/user-attachments/assets/0f95f44f-b6b8-4593-a7e2-4bdbd3ee4b54" width="180"/></td>
   </tr>
 </table>
 
@@ -66,8 +66,8 @@ Before diving into SQL, let’s take a moment to explore the data.
 | 10       | 104         | 1        | 2, 6       | 1, 4   | 2020-01-11 18:34:49 |
 
 #### Course of action:
-    - Create a new Temporary Table with all the columns.
-    - Remove `null` values and empty strings '' and replace them with *no values NULL*.
+  - Create a new Temporary Table keeping all the columns.
+  - Remove `null` values and `empty strings ''` and replace them with *no values NULL*.
 
 #### 💻 SQL Query
 ```sql
