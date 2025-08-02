@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/90492d3d-f48d-4868-b81c-09e5fc742c5e"></td>
+    <td><img src="https://github.com/user-attachments/assets/cfe072af-3078-4192-bbe0-9facb81e81c1"></td>
     <td>
       <p><strong>Case - Problem Statement</strong></p>
       <p>Danny loves Japanese food, so he opens up a cute little restaurant serving his three favorite dishes: sushi, curry, and ramen. After a few months of running Danny’s Diner, he collects some basic data but isn’t sure how to use it. He’s looking for help to answer a few simple questions that will allow him to improve the experience for his loyal customers. Due to privacy concerns, he shares only a sample of the data — but hopes it’s enough to write fully functioning SQL queries to help him answer his questions!</p>
@@ -20,10 +20,10 @@
     <th>Table 3: members</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/246ce3f6-b9bd-43ea-bf19-641a0e2ffc3d" width="350"/></td>
-    <td><img src="https://github.com/user-attachments/assets/9254d11a-572b-4c2e-9113-b38ab40fda4c" width="200"/></td>
-    <td><img src="https://github.com/user-attachments/assets/43d07543-5d5d-4f38-9835-29a2147308bc" width="200"/></td>
-    <td><img src="https://github.com/user-attachments/assets/493768cb-a4bd-4625-b458-030145d6d3ad" width="150"/></td>
+    <td><img src="https://github.com/user-attachments/assets/befd8ddc-fa1c-41b4-aa6d-f2533b9ee2ce" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/9dd8faab-7d68-43f4-9f72-4fe308d2c22e" width="200"/></td>
+    <td><img src="https://github.com/user-attachments/assets/263ff832-1276-4254-b7a5-1c78d4c98a02" width="200"/></td>
+    <td><img src="https://github.com/user-attachments/assets/30952f6b-7d91-4e89-99f9-75d1e26edbb7" width="150"/></td>
 
   </tr>
 </table>
