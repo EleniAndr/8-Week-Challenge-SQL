@@ -38,9 +38,9 @@ Case Study #1 - Danny's Diner
 #### 💻 SQL Query
 ```sql
     SELECT customer_id, SUM(price) as total_amount
-    FROM dannys_diner.sales as ds
-    JOIN dannys_diner.menu as dm 
-    	ON ds.product_id=dm.product_id
+    FROM dannys_diner.sales
+    JOIN dannys_diner.menu 
+    	ON sales.product_id=menu.product_id
     GROUP BY customer_id
     ORDER BY customer_id;
 ```
