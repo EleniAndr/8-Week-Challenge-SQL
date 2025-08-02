@@ -1,4 +1,7 @@
-# Case Study #1 - Danny's Diner
+<h1 align="center">
+Case Study #1 - Danny's Diner
+</h1>
+
 
 <table>
   <tr>
@@ -50,9 +53,9 @@
 | C           | 36          |
 
 #### 📜 Explanation 
-- Inner join the `sales` and `menu` tables on customer_id.
-- Calculate the total amount spent by each customer with `SUM(price)` and rename the column to total_amount.
-- Group and order by `customer_id` to display each customer's total spending at the restaurant.
+- `INNER JOIN` the `sales` and `menu` tables on `customer_id`.
+- Calculate the total amount spent by each customer with `SUM(price)` and rename the column to `total_amount`.
+- `GROUP/ORDER BY` `customer_id` to display each customer's total spending at the restaurant.
 
 ### Answer
 - Customer A spent 76$.
@@ -77,7 +80,7 @@ ORDER BY customer_id;
 | C           | 3    |
 #### 📜 Explanation
 - Count the days with `COUNT(DISTINCT(order_date))` so as not to count the same day multiple times.
-- Group and order by `customer_id`.
+- `GROUP` and `ORDER BY` `customer_id` to organize the results.
 ### Answer
 - Customer A has visited the restaurant 4 times.
 - Customer B has visited the restaurant 6 times.
@@ -93,12 +96,12 @@ WITH first_item AS (
   GROUP BY customer_id
 )
 
-SELECT fi.customer_id, fi.first_day, dm.product_name
-FROM first_item as fi
-JOIN dannys_diner.sales as ds
-  ON fi.customer_id = ds.customer_id AND fi.first_day = ds.order_date
-JOIN dannys_diner.menu dm
-  ON ds.product_id = dm.product_id
+SELECT first_item.customer_id, first_item.first_day, menu.product_name
+FROM first_item
+JOIN dannys_diner.sales
+  ON first_item.customer_id = sales.customer_id AND first_item.first_day = sales.order_date
+JOIN dannys_diner.menu
+  ON sales.product_id = menu.product_id
 ORDER BY customer_id;
 ```
 #### 🖊 Result
@@ -109,10 +112,13 @@ ORDER BY customer_id;
 | B           | 2021-01-01 | curry        |
 | C           | 2021-01-01 | ramen        |
 | C           | 2021-01-01 | ramen        |
+
 #### 📜 Explanation
-- Find the earliest order date for each customer using the temporary table `first_item`.
-- Join the tables `first_item` and `sales` to retrieve the corresponding `product_id` for each customer's first order.
-- Join the tables `sales` and `menu` to get the `product_name` for each product_id. 
+- Create a `common table expression (CTE)` called `first_item` to find the earliest date that each customer placed an order.
+- `INNER JOIN` the tables `first_item` and `sales` to retrieve the corresponding `product_id` for each customer's first order.
+- `INNER JOIN` the tables `sales` and `menu` to get the `product_name` for each product_id.
+- `ORDER BY` `customer_id` to organize the results.
+- 
 ### Answer
 - Customer A's first purchase from the menu was sushi and curry.
 - Customer B's first purchase from the menu was curry.
@@ -127,25 +133,30 @@ For customers A and C, it's unclear whether their orders were placed simultaneou
 ```sql
 SELECT
     product_name,
-    COUNT(ds.product_id) as times_purchased
-FROM dannys_diner.menu dm
-JOIN dannys_diner.sales ds ON
-	dm.product_id=ds.product_id
-GROUP BY dm.product_id, product_name
-ORDER BY dm.product_id DESC
+    COUNT(sales.product_id) as times_purchased
+FROM dannys_diner.menu
+JOIN dannys_diner.sales
+   ON menu.product_id = sales.product_id
+GROUP BY menu.product_id, sales.product_name
+ORDER BY menu.product_id DESC
 LIMIT 1;
 ```
+
 #### 🖊 Result
 | product_name | times_purchased |
 | ------------ | --------------- |
 | ramen        | 8               |
+
 #### 📜 Explanation
-- Count how many times each item has been purchased with `COUNT(ds.product_id)`, where ds. is needed in front of the product_id to count how many times each product was sold.
-- Join the tables menu and sales to retrieve the `product_name` for each product_id.
-- Order the product_id column in descending order and show only the first item on the list, which should be the most purchased.
+- Count how many times each item has been purchased with `COUNT(ds.product_id)`.
+- `INNER JOIN` the tables `menu` and `sales` to retrieve the `product_name` for each `product_id`.
+- `GROUP BY` `product_id` and `product_name`. 
+- `ORDER BY` `product_id` in descending order and show only the first item on the list `LIMIT=1`, which is the most purchased.
+
 ### Answer
 - The most purchased item on the menu is ramen, and it was purchased 8 times by all customers.
 ---
+
 ### 5. Which item was the most popular for each customer?
 
 #### 💻 SQL Query
@@ -181,6 +192,7 @@ ORDER BY times_purchased DESC
 - Give a ranking number to each row per customer_id using `DENSE_RANK`.
 - Inner join the tables sales and menu to get the `product_name` for each product_id.
 - Filter with `rank=1` to show the most purchased item(s) for each customer.
+- 
 ### Answer
 - Customer A's most popular item was ramen.
 - Customer C also preferred ramen.
