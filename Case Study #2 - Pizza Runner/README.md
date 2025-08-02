@@ -183,7 +183,7 @@ Case Study Questions
 
 This case study has LOTS of questions - they are broken up by area of focus, including:
 
-- [A. Pizza Metrics](https://github.com/EleniAndr/A.-Pizza-Metrics/blob/main/README.md#a-pizza-metrics)
+- [A. Pizza Metrics](https://github.com/EleniAndr/8-Week-Challenge-SQL/blob/main/Case%20Study%20%232%20-%20Pizza%20Runner/A-Pizza-Metrics.md#a-pizza-metrics)
 - [B. Runner and Customer Experience]()
 - [C. Ingredient Optimisation]()
 - [D. Pricing and Ratings]()
