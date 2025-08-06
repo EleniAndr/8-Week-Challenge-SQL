@@ -135,11 +135,30 @@ ORDER BY customer_id;
 ### 6. What was the maximum number of pizzas delivered in a single order?
 #### 💻 SQL Query
 ```sql
-
+SELECT customer_orders_clean.order_id, COUNT(customer_orders_clean.pizza_id) as max_pizzas_delivered
+FROM customer_orders_clean
+JOIN runner_orders_clean 
+	ON customer_orders_clean.order_id = runner_orders_clean.order_id
+WHERE cancellation IS null
+GROUP BY customer_orders_clean.order_id
+ORDER BY max_pizzas_delivered DESC
+LIMIT 1;
 ```
 #### 🖊 Result
-#### 📜 Explanation 
+
+| order_id | max_pizzas_delivered |
+| -------- | -------------------- |
+| 4        | 3                    |
+
+#### 📜 Explanation
+- Use `COUNT(customer_orders_clean.pizza_id)` to count the number of pizzas that were ordered.
+- `INNER JOIN` the tables `customer_orders_clean` and `runner_orders_clean` on `order_id` to get the information for cancelled orders.
+- Use `WHERE cancellation IS null` to count out the cancelled orders.
+- `GROUP BY` `order_id` to show the results for each order.
+- `ORDER BY` `max_pizzas_ordered` in descending order.
+- `LIMIT 1` to show only the first result, which is the maximum number of pizzas delivered.
 ### Answer
+The maximum number of pizzas that were delivered in a single order is 3.
 
 ### 7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
 #### 💻 SQL Query
