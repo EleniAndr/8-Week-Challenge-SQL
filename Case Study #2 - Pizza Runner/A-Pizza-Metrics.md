@@ -282,7 +282,7 @@ ORDER BY total_orders DESC;
 | Friday      | 1            |
 
 #### 📜 Explanation
-- Use `TO_CHAR(order_time, 'Day')` to give the full name of the day (e.g, Monday,...)
+- Use `TO_CHAR(order_time, 'Day')` to give the full name of the day (e.g, Monday,...).[^1]
 - Use `COUNT(DISTINCT(order_id))` to count how many orders were made each day.
 - `GROUP BY` day.
 - `ORDER BY` orders from most to least.
@@ -290,3 +290,5 @@ ORDER BY total_orders DESC;
 - The highest amount of orders was made on a Wednesday, 5 orders.
 - On Saturday and Thursday, 2 orders were made.
 - On Friday, only 1 order was made.
+
+[^1]: The dates on the table shown on the site and on the SQL editor that is provided are different. The day/month is the same, but the year shown on the site is 2021, whereas on the editor it is 2020. 
