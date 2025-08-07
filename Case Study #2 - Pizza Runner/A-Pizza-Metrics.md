@@ -206,17 +206,87 @@ ORDER BY customer_orders_clean.customer_id;
 
 ### 8. How many pizzas were delivered that had both exclusions and extras?
 #### 💻 SQL Query
+```sql
+SELECT
+  SUM(CASE 
+	WHEN exclusions IS NOT null AND extras IS NOT null THEN 1
+    ELSE 0
+  END) AS extras_and_exclusions
+FROM customer_orders_clean
+JOIN runner_orders_clean 
+	ON customer_orders_clean.order_id = runner_orders_clean.order_id
+WHERE cancellation IS null;
+```
 #### 🖊 Result
-#### 📜 Explanation 
+
+| extras_and_exclusions |
+| --------------------- |
+| 1                     |
+
+#### 📜 Explanation
+- Use `CASE WHEN...ELSE` to create the column:
+  - `extras_and_exclusions`: counts orders where ingredients were excluded (exclusions) and added (extras).
+- `INNER JOIN` the tables `customer_orders_clean` and `runner_orders_clean` on `order_id` to get the information for cancelled orders.
+- Filter out cancelled orders with `WHERE cancellation IS null`.
 ### Answer
+1 pizza was delivered that had both exclusions and extras.
 
 ### 9. What was the total volume of pizzas ordered for each hour of the day?
 #### 💻 SQL Query
+```sql
+SELECT 
+	EXTRACT(HOUR FROM order_time) AS hour_of_day, 
+    COUNT(order_id) as orders_amount
+FROM customer_orders_clean
+GROUP BY hour_of_day
+ORDER BY hour_of_day;
+```
 #### 🖊 Result
-#### 📜 Explanation 
+
+| hour_of_day | orders_amount |
+| ----------- | ------------- |
+| 11          | 1             |
+| 13          | 3             |
+| 18          | 3             |
+| 19          | 1             |
+| 21          | 3             |
+| 23          | 3             |
+
+#### 📜 Explanation
+- Separate the hour from `order_time` into a column called `hour_of_day`.
+- Count the orders.
+- `GROUP/ORDER BY` `hour_of_day`.
+
 ### Answer
+- The most pizzas were ordered at 13:00, 18:00, 21:00, and 23:00.
+- The least pizzas were ordered at 11:00 and 19:00.
 
 ### 10. What was the volume of orders for each day of the week?
 #### 💻 SQL Query
+```sql
+SELECT 
+  --CAST(order_time AS DATE) AS full_date,
+  TO_CHAR(order_time, 'Day') AS day_of_week,
+  COUNT(DISTINCT(order_id)) as total_orders
+FROM customer_orders_clean
+GROUP BY day_of_week
+ORDER BY total_orders DESC;
+```
 #### 🖊 Result
-#### 📜 Explanation 
+
+| day_of_week | total_orders |
+| ----------- | ------------ |
+| Wednesday   | 5            |
+| Saturday    | 2            |
+| Thursday    | 2            |
+| Friday      | 1            |
+
+#### 📜 Explanation
+- Use `TO_CHAR(order_time, 'Day')` to give the full name of the day (e.g, Monday,...)
+- Use `COUNT(DISTINCT(order_id))` to count how many orders were made each day.
+- `GROUP BY` day.
+- `ORDER BY` orders from most to least.
+### Answer
+- The highest amount of orders was made on a Wednesday, 5 orders.
+- On Saturday and Thursday, 2 orders were made.
+- On Friday, only 1 order was made.
