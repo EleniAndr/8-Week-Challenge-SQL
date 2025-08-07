@@ -162,9 +162,47 @@ The maximum number of pizzas that were delivered in a single order is 3.
 
 ### 7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
 #### 💻 SQL Query
+```sql
+SELECT customer_orders_clean.customer_id,
+SUM(CASE 
+	WHEN exclusions IS NOT null OR extras IS NOT null THEN 1
+    ELSE 0
+  END) AS at_least_1_change,
+  SUM(CASE 
+	WHEN exclusions IS null AND extras IS null THEN 1
+    ELSE 0
+  END) AS no_changes
+FROM customer_orders_clean
+JOIN runner_orders_clean 
+	ON customer_orders_clean.order_id = runner_orders_clean.order_id
+WHERE cancellation IS null
+GROUP BY customer_orders_clean.customer_id
+ORDER BY customer_orders_clean.customer_id;
+```
 #### 🖊 Result
-#### 📜 Explanation 
+
+| customer_id | at_least_1_change | no_changes |
+| ----------- | ----------------- | ---------- |
+| 101         | 0                 | 2          |
+| 102         | 0                 | 3          |
+| 103         | 3                 | 0          |
+| 104         | 2                 | 1          |
+| 105         | 1                 | 0          |
+
+#### 📜 Explanation
+- Use `CASE WHEN...ELSE` to create two columns:
+  - `at_least_1_change`: counts orders where ingredients were either excluded (exclusions) or added (extras).
+  - `no_changes`: counts orders with no modifications.
+- `INNER JOIN` the tables `customer_orders_clean` and `runner_orders_clean` on `order_id` to get the information for cancelled orders.
+- Filter out cancelled orders with `WHERE cancellation IS null`.
+- `GROUP/ORDER BY` customer_id.
+
 ### Answer
+- Customer 101: No changes in their orders.
+- Customer 102: No changes in their orders.
+- Customer 103: Made 3 changes in their orders.
+- Customer 104: No changes in 1 order and made 3 changes in another.
+- Customer 105: Made 1 change in their orders.
 
 ### 8. How many pizzas were delivered that had both exclusions and extras?
 #### 💻 SQL Query
